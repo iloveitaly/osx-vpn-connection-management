@@ -13,11 +13,7 @@
 
 - (id) init {
 	if (self = [super init]) {
-		if(time(NULL) < 1299353192 + (60 * 60 * 24 * 30)) {
-			vpnGlue = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"VPNGlue" ofType:@"scpt"]] error:nil];
-		} else {
-			exit(1);
-		}
+		vpnGlue = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"VPNGlue" ofType:@"scpt"]] error:nil];
 	}
 	
 	return self;
